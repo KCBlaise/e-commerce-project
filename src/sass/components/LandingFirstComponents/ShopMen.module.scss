@@ -1,0 +1,35 @@
+@use "../../abstract" as *;
+
+.sectionbg{
+    background-color: $lightBlue;
+    
+    @include responsive(mobile){
+        position: relative;
+        
+        &::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba($lightBlue, 0.3);
+        }
+    }
+}
+
+.h2Color{
+    color: $theme;
+}
+
+
+.shopNow{
+    @include buttonStyle;
+    color: $textBlue;
+
+    @include responsive(mobile){
+        color: $textBlue;
+    }
+    
+    &:hover{
+        background-color: $textBlue;
+        color: $theme;
+    }
+}

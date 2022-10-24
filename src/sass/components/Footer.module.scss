@@ -1,0 +1,61 @@
+@use "../abstract" as *;
+
+.footer{
+    padding: $sectionPadding;
+    background-color: $theme;
+    font-family: $mainFonts;
+    color: #fff;
+    
+    a{
+        color: #fff;
+        
+        &:hover{
+            color: $textBlue;
+        }
+    }
+}
+
+.footerWrap{
+    @include maxWidthSetting;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.credits{
+    display: flex;
+    flex-direction: column;
+
+    h4{
+        margin-bottom: 1rem;
+    }
+
+    span:last-child{
+        margin-bottom: 2rem;
+    }
+    
+    @include responsive(tablet){
+        width: 300px;
+    }
+
+    @include responsive(large-phone){
+        width: 150px;
+        
+        span{
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+
+.rightCredits{
+    display: flex;
+    h4, span{
+        align-self: flex-end;
+
+        @include responsive(tablet){
+            align-self: flex-start;
+        }
+        
+    }
+}

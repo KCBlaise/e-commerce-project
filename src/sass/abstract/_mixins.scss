@@ -1,0 +1,74 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+@use "./fonts" as *;
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+@mixin bgCover {
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+
+@mixin maxWidthSetting {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include responsive(tablet){
+        max-width: 630px;
+    }
+
+    @include responsive(large-laptop){
+        max-width: 1200px;
+    }
+
+    @include responsive(large-screen){
+        max-width: 1800px;
+    }
+}
+
+@mixin buttonStyle {
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    font-size: 14px;
+    border: 0;    
+    outline: none;
+    background-color: $theme;
+
+    &:hover{
+        background-color: $textBlue;
+        color: $theme;
+        fill: $theme;
+    }
+
+    @include responsive(large-screen){
+        margin-top: 2rem;
+        font-size: 24px;
+    }
+}
+
+@mixin landingSectionHeader {
+    @include landingHeaderSize;
+    margin-bottom: 1rem;
+    color: $textBlue;
+}
+
+@mixin landingGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    @include responsive(tablet){
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include responsive(large-phone){
+        grid-template-columns: 1fr;
+    }    
+}

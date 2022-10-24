@@ -1,0 +1,97 @@
+@use "../abstract" as *;
+
+.landingSwiper{
+    width: 100%;
+    height: calc(100vh - $headerHeight);
+}
+
+.section{
+    padding: $sectionPadding;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    @include responsive(mobile){
+        @include bgCover;
+        background-position: center;
+        position: relative;
+
+        &::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba($theme, 0.3);
+        }
+    }
+}
+
+.maxWidthWrap{
+    width: 100%;
+    @include maxWidthSetting;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+.landingText{
+    max-width: 550px;
+    color: $theme;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include responsive(tablet){
+        max-width: 350px;
+    }
+
+    @include responsive(large-phone){
+        max-width: 240px;
+    }
+
+    @include responsive(mobile){
+        max-width: 300px;
+        z-index: +1;
+    }
+
+    @include responsive(large-screen){
+        max-width: 1000px;
+        font-size: 2rem;
+    }
+
+    .h2{
+        @include H2FontSize;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+
+        @include responsive(large-phone){
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+.landingImage{
+    max-width: 400px;
+
+    @include responsive(tablet){
+        max-width: 250px;
+    }
+    
+    img{
+        border-radius: 50%;
+        height: 450px;
+        
+        @include responsive(tablet){
+            height: 350px;
+        }
+
+        @include responsive(large-laptop){
+            height: initial;
+        }
+
+        @include responsive(large-screen){
+            border-radius: 20%;
+            height: initial;
+        }
+    }
+}

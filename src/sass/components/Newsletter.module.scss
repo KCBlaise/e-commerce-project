@@ -1,0 +1,64 @@
+@use "../abstract" as *;
+
+.section{
+    padding: $sectionPadding;
+    background-color: $bgWhite;
+}
+
+.maxWidthWrap{
+    @include maxWidthSetting;
+    @include flexCenter;
+    flex-direction: column;
+
+    
+    h3{
+        @include landingSectionHeader;
+        color: $purple;
+    }
+
+    p{
+        align-self: flex-start;
+        margin-bottom: 1rem;
+    }
+}
+
+.emailContainer{
+    background-color: $theme;
+    width: 500px;
+    fill: $purple;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+
+    @include responsive(large-phone){
+        width: 300px;
+    }
+
+    @include responsive(large-screen){
+        width: 750px;
+    }
+    
+    label{
+        @include flexCenter;
+    }
+}
+
+.email{
+    height: 50px;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: $purple;
+    padding: 1rem;
+    @include emailFontSize;
+
+    @include responsive(large-screen){
+        height: 100px;
+    }
+}
+
+.subscribe{
+    @include buttonStyle;
+    font-size: 18px;
+    color: $purple;
+}

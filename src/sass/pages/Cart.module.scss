@@ -1,0 +1,25 @@
+@use "../abstract" as *;
+
+.section{
+    min-height: calc(100vh - 120px);
+    font-family: $mainFonts;
+    background-color: $bgWhite;
+}
+
+.maxWidthWrap{
+    @include maxWidthSetting;
+    // background-color: $theme;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+}
+
+.cartInfo{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid $textBlue;
+    border-top: 1px solid $textBlue;
+    color: $textBlue;
+}

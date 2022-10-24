@@ -1,0 +1,19 @@
+@use "../../abstract" as *;
+
+.sectionbg{
+    background-color: $yellow;
+}
+
+.summerbgTop{
+    background-position: top;
+}
+
+.h2Color{
+    color: $red;
+}
+
+.comingSoon{
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: $red;
+}

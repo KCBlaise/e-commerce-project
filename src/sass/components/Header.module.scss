@@ -1,0 +1,63 @@
+@use "../abstract" as *;
+
+.header{
+    height: $headerHeight;
+    background-color: $theme;
+}
+
+.wrapper{
+    @include maxWidthSetting;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    
+    img{
+        width: 100%;
+    }
+}
+
+.nav{
+    .hamburgerIcon{
+        fill: $textBlue;
+        display: none;
+    }
+
+    ul{
+    display: flex;
+    font-family: $navFonts;
+    font-size: $navFontSize;
+
+        li{
+            margin-right: 2rem;
+            @include responsive(tablet){
+                margin-right: 1.5rem;
+            }
+            
+            &:last-child{
+                margin-right: 0;
+            }
+            
+            a{
+                color: $textBlue;
+                fill: $textBlue;
+                cursor: pointer;  
+                padding-bottom: 1px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            &:hover{
+                border-bottom: 1px solid $textBlue;
+                padding-bottom: 0px;
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/mixins" as *;
+
+.item{
+    background-color: transparent;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: left;
+    background-color: #fff;
+    
+    &:hover{
+        cursor: default;
+        border: 1px solid $purple;
+    }
+
+    @include responsive(tablet){
+        padding: 0.5rem;
+    }
+
+    .figure{
+        margin: 0 auto;
+        
+        img{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            
+            @include responsive(mobile) {
+                height: 200px;
+            }
+        }
+    }
+
+    .itemName{
+        margin-top: 2rem;
+        margin-left: 0.5rem;
+        font-size: 20px;
+        color: $theme;
+    }
+    
+    .price{
+        display: block;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        font-size: 18px;
+        color: $price;
+    }
+
+    .addToCart{
+        @include buttonStyle;
+        @include flexCenter;
+        margin-left: 0.5rem;
+        color: $purple;
+        fill: $purple;
+    }
+}

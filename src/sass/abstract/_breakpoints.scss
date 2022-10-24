@@ -1,0 +1,43 @@
+$breakpoints: (
+    // Laptop First Design
+    // using max-width
+    'mobile': 480px,
+    'large-phone': 600px,
+    'tablet': 900px,
+    
+    // using min-wdith
+    'large-laptop': 1440px,
+    'large-screen' : 2000px
+);
+
+@mixin responsive($bp) {
+    @if $bp == mobile {
+        @media screen and (max-width: map-get($breakpoints, 'mobile')){
+            @content            
+        }        
+    };
+
+    @if $bp == large-phone {
+        @media screen and (max-width: map-get($breakpoints, 'large-phone')){
+            @content            
+        }        
+    };
+
+    @if $bp == tablet {
+        @media screen and (max-width: map-get($breakpoints, 'tablet')){
+            @content            
+        }        
+    };
+     
+    @if $bp == large-laptop {
+        @media screen and (min-width: map-get($breakpoints, 'large-laptop')){
+            @content            
+        }        
+    };
+
+    @if $bp == large-screen {
+        @media screen and (min-width: map-get($breakpoints, 'large-screen')){
+            @content            
+        }        
+    };
+};

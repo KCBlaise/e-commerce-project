@@ -1,0 +1,45 @@
+@use "../abstract" as *;
+
+.maxWidthWrap{
+    width: 100%;
+    background-color: $theme;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+}
+
+.rowHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $textBlue;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $textBlue;
+    
+    h3{
+        @include pageHeaderSize;
+    }
+
+    @include responsive(mobile){
+        flex-direction: column;
+    }
+
+}
+
+.seeMore{
+    @include buttonStyle;
+    background-color: $textBlue;
+    // color: $textBlue;
+
+    &:hover{
+        background-color: $purple;
+        color: $textBlue;
+    }
+}
+
+.displayRow{
+    display: grid;
+    grid-template-columns: (repeat(4, 1fr));
+    gap: 0.5rem;
+}

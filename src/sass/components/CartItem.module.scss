@@ -1,0 +1,75 @@
+@use "../abstract" as *;
+
+.item{
+    background-color: $theme;
+    width: 100%;
+    color: $textBlue;
+    fill: $textBlue;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;    
+}
+
+.figure{
+    // max-width: 200px;
+    margin: 0 auto;
+    
+    img{
+        width: 120px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+}
+
+.wrap{
+    flex-grow: 1;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid $textBlue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    span{
+        font-size: 2rem;
+    }
+}
+
+.functional{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    .quantity{
+        font-size: 1rem;
+
+        .control{
+            color: $textBlue;
+            padding: 0 0.5rem;
+            margin: 0 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .showQuantity{
+            display: inline-block;
+            background-color: $textBlue;
+            color: $theme;
+            width: 70px;
+            text-align: center;
+            border-radius: 0.25rem;
+        }
+    }
+
+    .remove{
+        cursor: pointer;
+    }
+}

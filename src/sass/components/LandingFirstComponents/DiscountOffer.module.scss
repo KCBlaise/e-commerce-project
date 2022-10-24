@@ -1,0 +1,25 @@
+@use "../../abstract" as *;
+
+.sectionbg{
+    background-color: $purple;
+}
+
+.h2Color{
+    color: $textBlue;
+}
+
+
+.shopNow{
+    @include buttonStyle;
+    display: block;
+    color: $purple;
+
+    @include responsive(mobile){
+        color: $textBlue;
+    }
+    
+    &:hover{
+        background-color: $textBlue;
+        color: $theme;
+    }
+}

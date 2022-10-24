@@ -1,0 +1,37 @@
+@use "../abstract" as *;
+
+.section{
+    min-height: calc(100vh - 120px);
+    padding: $sectionPadding;
+    background-color: $bgWhite;
+    font-family: $mainFonts;
+}
+
+.maxWidthWrap{
+    @include maxWidthSetting;
+}
+
+.header{
+    font-family: 'Fasthand', cursive;
+    color: $theme;
+    @include pageHeaderSize;
+}
+
+.displayGrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    @include responsive(tablet){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include responsive(large-phone){
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    @include responsive(large-screen){
+        grid-template-columns: repeat(6, 1fr);
+    }
+}

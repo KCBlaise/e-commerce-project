@@ -1,0 +1,37 @@
+@use "../abstract" as *;
+
+.section{
+    text-align: center;
+    padding: $sectionPadding;
+    background-color: $theme;
+    color: #fff;
+}
+
+.maxWidthWrap{
+    @include maxWidthSetting;
+
+    h3{
+        @include landingSectionHeader;
+    }
+}
+
+.grid{
+    @include landingGrid;
+    row-gap: 2rem;
+    
+    .categories{
+        h4{
+            border-bottom: 1px solid $textBlue;
+            margin-bottom: 1rem;
+            font-size: 28px;
+            
+            a{
+                color: $textBlue;
+
+                &:hover{
+                    color: $lightBlue;
+                }
+            }
+        }
+    }
+}

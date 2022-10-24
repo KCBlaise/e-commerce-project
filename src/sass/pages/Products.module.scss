@@ -1,0 +1,11 @@
+@use "../abstract" as *;
+
+.section{
+    padding: $sectionPadding;
+    background-color: $bgWhite;
+    font-family: $mainFonts;
+}
+
+.maxWidthWrap{
+    @include maxWidthSetting;
+}
